@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartOrder AI — Customer Support Automation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-orb orb1"></div><div class="bg-orb orb2"></div>
+<header class="topbar">
+  <a class="brand" href="#home"><span class="brand-mark">S</span><span>SmartOrder <b>AI</b></span></a>
+  <nav><a href="#home">Home</a><a href="#support">Support</a><a href="#how">How it works</a><a href="#faq">FAQ</a></nav>
+  <button class="outline-btn" onclick="openHumanSupport()">Human Support</button>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="hero-copy"><div class="eyebrow"><span class="dot"></span> AI-POWERED CUSTOMER SUPPORT</div>
+  <h1>Get answers.<br><span>Get it solved.</span></h1>
+  <p>SmartOrder AI understands common e-commerce questions, provides instant guidance, and connects you to a human when needed.</p>
+  <div class="hero-actions"><a class="gold-btn" href="#support">Start Support <span>→</span></a><button class="ghost-btn" onclick="showToast('Demo mode active — no real customer data is collected.')">Try Demo</button></div>
+  <div class="trust"><span>● Secure demo</span><span>● No sensitive data required</span><span>● Human escalation</span></div></div>
+  <div class="hero-card">
+    <div class="chat-head"><div class="avatar">S</div><div><strong>SmartOrder Assistant</strong><small><i></i> Online • Instant replies</small></div><span class="spark">✦</span></div>
+    <div class="mini-chat" id="miniChat"><div class="msg bot">Hi! 👋 I’m SmartOrder AI.<br>How can I help today?</div><div class="quick"><button onclick="quickReply('Where is my order?')">📦 Order status</button><button onclick="quickReply('I want a refund')">💳 Refund</button></div></div>
+  </div>
+</section>
+<section class="support-section" id="support">
+  <div class="section-heading"><div><div class="eyebrow">SUPPORT CENTER</div><h2>How can we help?</h2></div><div class="status"><span></span> Automation online</div></div>
+  <div class="support-grid">
+    <div class="panel query-panel"><h3>Tell us what you need</h3><p class="muted">Choose a common issue or type your question below.</p>
+      <div class="categories" id="categories">
+        <button data-query="Where is my order?">📦 <span>Order Status<small>Track a delivery</small></span></button>
+        <button data-query="My delivery is delayed">🚚 <span>Delivery Delay<small>Report a delay</small></span></button>
+        <button data-query="I want to return my product">↩️ <span>Return Request<small>Start a return</small></span></button>
+        <button data-query="When will I get my refund?">💳 <span>Refund Status<small>Check refund timing</small></span></button>
+        <button data-query="I want to cancel my order">✕ <span>Cancel Order<small>Before dispatch</small></span></button>
+        <button data-query="Tell me about a product">◇ <span>Product Enquiry<small>Ask about a product</small></span></button>
+      </div>
+      <div class="input-wrap"><input id="queryInput" placeholder="Type your question..." autocomplete="off"><button id="sendBtn" class="send-btn">Send</button></div>
+      <div class="privacy">🔒 Demo only — please do not enter passwords, card numbers, or other sensitive information.</div>
+    </div>
+    <div class="panel response-panel"><div class="response-top"><h3>Automated response</h3><span class="ai-tag">✦ AI</span></div><div id="responseArea" class="response-area"><div class="empty-icon">✦</div><h4>Ready to help</h4><p>Select a support category or ask a question. Your response will appear here.</p></div><div id="nextStep" class="next-step hidden"></div></div>
+  </div>
+</section>
+<section class="workflow" id="how"><div class="section-heading"><div><div class="eyebrow">AUTOMATION FLOW</div><h2>From question to solution</h2></div></div>
+  <div class="flow"><div class="flow-step"><b>01</b><span>Customer Input</span><small>Question or issue</small></div><div class="arrow">→</div><div class="flow-step"><b>02</b><span>Identify Query</span><small>Classify intent</small></div><div class="arrow">→</div><div class="flow-step"><b>03</b><span>Automated Response</span><small>Relevant guidance</small></div><div class="arrow">→</div><div class="flow-step"><b>04</b><span>Next Step</span><small>Action for customer</small></div><div class="arrow">→</div><div class="flow-step highlight"><b>05</b><span>Human Support</span><small>Escalate if needed</small></div></div>
+</section>
+<section class="faq" id="faq"><div class="section-heading"><div><div class="eyebrow">FREQUENTLY ASKED QUESTIONS</div><h2>Quick answers</h2></div></div><div class="faq-grid"><details><summary>How do I track my order?</summary><p>Enter your order ID in the support flow. In this demo, use <b>SO-2026-1042</b> to see a sample shipped status.</p></details><details><summary>Can I return an item?</summary><p>Yes. Returns can be requested within the eligible return period. Keep the order ID and reason ready for support.</p></details><details><summary>When will my refund arrive?</summary><p>After approval, refund timing depends on the payment method. If an amount was already deducted, keep your transaction reference available.</p></details><details><summary>What if the bot cannot solve my issue?</summary><p>Select Human Support. The issue summary is prepared for a support representative without asking for unnecessary sensitive data.</p></details></div></section>
+</main>
+<footer><div class="brand"><span class="brand-mark">S</span><span>SmartOrder <b>AI</b></span></div><p>Customer Support Automation • Student Skill Development Project</p><span>© 2026 SmartOrder AI</span></footer>
+<div class="modal hidden" id="supportModal"><div class="modal-card"><button class="close" onclick="closeHumanSupport()">×</button><div class="modal-icon">☎</div><h2>Human Support</h2><p>Automation could not fully resolve your issue? A support representative can help.</p><div class="support-contact"><b>Support Desk</b><span>Mon–Sat • 9:00 AM–6:00 PM</span><span>📧 support@smartorder.demo</span><span>☎ +91 1800 000 2026</span></div><button class="gold-btn full" onclick="submitSupport()">Create Support Request</button></div></div>
+<div id="toast" class="toast"></div>
+<script src="script.js"></script>
+</body></html>
